@@ -45,29 +45,28 @@ export const scenarios: Scenario[] = [
     ]
   },
   {
-    id: 'abdominal-pain',
-    title: 'Abdominal Pain',
-    description: 'A nurse calls about a patient with abdominal pain',
-    initialPrompt: `You are a nurse calling about a patient with abdominal pain. The patient is a 32-year-old female with right lower quadrant pain that started yesterday. Pain is now 7/10, worse with movement. She has nausea and one episode of vomiting. Last menstrual period was 3 weeks ago. Vital signs: BP 128/82, HR 92, RR 18, Temp 38.2°C. Stay in character as the nurse.`,
+    id: 'hypotension',
+    patient_name: 'Ronald O\'Brien',
+    yaml_path: 'Ronald_OBrien',
+    title: 'Low BP',
+    description: 'A nurse calls about a patient with low BP',
+    initialPrompt: "Hi doctor, please could you review one of my patients, Ronald O'Brien? His blood pressure is really quite low on the last obs round.",
     correctTriage: 'urgent',
     learningPoints: [
-      'RLQ pain with fever suggests appendicitis',
-      'Needs evaluation within hours, not days',
-      'Must rule out ectopic pregnancy in woman of childbearing age',
-      'Not immediately life-threatening but requires timely assessment'
+      'To be confirmed...'
     ]
   },
   {
     id: 'fall',
-    title: 'Fall with Hip Pain',
+    title: 'Fall',
+    patient_name: 'Ibrahim Patel',
+    yaml_path: 'Ibrahim_Patel',
     description: 'A nurse calls about an elderly patient who fell',
-    initialPrompt: `You are a nurse calling about an elderly patient. The patient is an 82-year-old female who fell at home 4 hours ago. She has pain in her right hip and cannot bear weight. She didn't hit her head and didn't lose consciousness. She's alert and oriented. Vital signs stable: BP 135/78, HR 76, RR 16. She lives alone and is currently lying on a couch. Stay in character as the nurse.`,
+    initialPrompt:  'Hi doctor, please could you review Mr Patel, hospital number IP654321? He had an unwitnessed fall about 20 minutes ago. We've helped him back into bed but he'll need a falls review.',
     correctTriage: 'urgent',
     learningPoints: [
-      'Inability to bear weight after fall suggests fracture',
-      'Elderly patients are high risk for hip fractures',
-      'Needs imaging and evaluation same day',
-      'Not immediately life-threatening but requires prompt care'
+      'Unwitnessed fall in an elerly patient on clopidogrel and possible new neurological deficit',
+      'Which elements of a falls review could you initiate before seeing a patient?'
     ]
   }
 ];
