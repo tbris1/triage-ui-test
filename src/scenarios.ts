@@ -62,7 +62,7 @@ export const scenarios: Scenario[] = [
     patient_name: 'Ibrahim Patel',
     yaml_path: 'Ibrahim_Patel',
     description: 'A nurse calls about an elderly patient who fell',
-    initialPrompt:  'Hi doctor, please could you review Mr Patel, hospital number IP654321? He had an unwitnessed fall about 20 minutes ago. We've helped him back into bed but he'll need a falls review.',
+    initialPrompt:  'Hi doctor, please could you review Mr Patel, hospital number IP654321? He had an unwitnessed fall about 20 minutes ago. We\'ve helped him back into bed but he\'ll need a falls review.',
     correctTriage: 'urgent',
     learningPoints: [
       'Unwitnessed fall in an elerly patient on clopidogrel and possible new neurological deficit',
