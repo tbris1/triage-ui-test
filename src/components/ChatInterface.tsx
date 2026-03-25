@@ -9,10 +9,12 @@ interface ChatInterfaceProps {
 
 export function ChatInterface({ messages, onSendMessage, isLoading }: ChatInterfaceProps) {
   const [input, setInput] = useState('');
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
   };
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function ChatInterface({ messages, onSendMessage, isLoading }: ChatInterf
 
   return (
     <div className="d-flex flex-column h-100">
-      <div className="flex-grow-1 overflow-auto p-3 bg-light" style={{ minHeight: 0 }}>
+      <div ref={messagesContainerRef} className="flex-grow-1 overflow-auto p-3 bg-light" style={{ minHeight: 0 }}>
         {messages.filter(m => m.role !== 'system').map((message) => (
           <div
             key={message.id}
@@ -60,7 +62,7 @@ export function ChatInterface({ messages, onSendMessage, isLoading }: ChatInterf
             </div>
           </div>
         )}
-        <div ref={messagesEndRef} />
+
       </div>
 
       <div className="border-top p-3 bg-white">
