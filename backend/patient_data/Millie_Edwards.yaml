@@ -73,14 +73,16 @@ patient:
         temp: 37.8
         spo2: "99% RA"
         consciousness: "more drowsy; answering in short phrases"
+        capillary_blood_glucose: "28.9 mmol/L"
+        capillary_ketones: "6.1 mmol/L"      
     fluid_balance:
       in_last_24_hours:
-        oral_intake: 0ml
+        oral_intake: "unknown - recently admitted"
         iv_fluids: 500ml
         total: 500ml
       out_last_24_hours:
         catheter: false
-        urine: "Unknown (not measured)"
+        urine: "Unknown - recently admitted"
         vomit: 600ml
         diarrhoea: 0ml
         total: "Unknown"
@@ -130,7 +132,7 @@ patient:
     confusion: "drowsy and intermittently confused; worse over last 2 hours"
     bowels: "no diarrhoea"
     urine_output: "frequent urination earlier today; not passed urine since arriving in ED Obs (~3 hours)"
-    nausea_vomiting: "persistent vomiting (multiple episodes today)"
+    nausea_vomiting: "persistent vomiting over past 3 days, no appetite"
     abdominal_pain: "diffuse abdominal pain, crampy"
     thirst: "marked thirst"
     breathlessness: "feels short of breath; rapid deep breathing noted"
@@ -165,11 +167,9 @@ patient:
       permitted: true
       result: "6.1 mmol/L"
     blood_tests:
-      permitted: false
-      reason: "Requires a doctor or phlebotomist"
+      permitted: true
     venous_blood_gas:
-      permitted: false
-      reason: "Requires a doctor"
+      permitted: true
     abdominal_examination:
       permitted: false
       reason: "Requires a doctor"
