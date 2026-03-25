@@ -164,7 +164,7 @@ Keep replies brief, friendly, and realistic.
 DO NOT just list data - engage in a conversational manner.
 """
 
-def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep_request: str = None) -> str:
+def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep_request: str = None, conversation_history: List[Dict] = None) -> str:
     """
     Handle a nurse's response to a doctor's question.
 
@@ -173,12 +173,12 @@ def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep
         yaml_path: Path to the patient YAML file (e.g., "Richard_Crowther")
         doctor_question: The doctor's question
         initial_nurse_bleep_request: The initial request from the nurse (optional, will use from YAML if not provided)
+        conversation_history: Full prior conversation as list of {role, content} dicts
 
     Returns:
         The nurse's response as a string
     """
     # Load patient data from YAML file
-    # Get the directory where this script is located
     script_dir = os.path.dirname(os.path.abspath(__file__))
     yaml_file_path = os.path.join(script_dir, "patient_data", f"{yaml_path}.yaml")
     patient_data = load_yaml(yaml_file_path)
@@ -198,21 +198,37 @@ def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep
     print("Nurse data provided to LLM:")
     print(new_nurse_data_str)
 
+    # Build multi-turn input
+    input_messages = []
+
+    # 1. Opening context: nurse's initial bleep
+    if initial_nurse_bleep_request:
+        input_messages.append({"role": "assistant", "content": initial_nurse_bleep_request})
+
+    # 2. Prior conversation turns (exclude system messages and the last user message)
+    if conversation_history:
+        prior = [m for m in conversation_history if m.get("role") != "system"]
+        # Drop the last user message — it's doctor_question, handled below
+        if prior and prior[-1].get("role") == "user":
+            prior = prior[:-1]
+        input_messages.extend({"role": m["role"], "content": m["content"]} for m in prior)
+
+    # 3. Current question + patient data
+    input_messages.append({
+        "role": "user",
+        "content": f"""DOCTOR_RESPONSE:
+{doctor_question}
+
+CLARIFYING_QUESTION:
+{clarifying_question}
+
+PATIENT_DATA:
+{new_nurse_data_str}"""
+    })
+
     response = client.responses.create(
-       model="gpt-5-mini",
-       instructions=nurse_system_prompt,
-       input=f"""
-            "NURSE_BLEEP_REQUEST":
-            {initial_nurse_bleep_request}
-
-            "DOCTOR_RESPONSE":
-            {doctor_question}
-
-            "CLARIFYING_QUESTION:
-            {clarifying_question}
-
-            "PATIENT_DATA":
-            {new_nurse_data_str}
-         """
-   )
+        model="gpt-5-mini",
+        instructions=nurse_system_prompt,
+        input=input_messages
+    )
     return response.output_text

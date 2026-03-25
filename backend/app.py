@@ -55,7 +55,8 @@ def chat():
             client=client,
             yaml_path=yaml_path,
             doctor_question=doctor_question,
-            initial_nurse_bleep_request=initial_prompt
+            initial_nurse_bleep_request=initial_prompt,
+            conversation_history=messages
         )
 
         return jsonify({
