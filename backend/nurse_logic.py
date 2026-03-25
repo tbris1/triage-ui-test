@@ -190,7 +190,7 @@ def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep
     # Classify the question to get relevant data paths
     classified = router_classify_question(client, doctor_question)
     yaml_paths = classified.get("yaml_paths", [])
-    clarifying_question = classified.get("clarifying_question", [])
+    clarifying_question = classified.get("clarifying_questions", [])
 
     new_nurse_data = get_by_paths(patient_data, yaml_paths)
     new_nurse_data_str = json.dumps(new_nurse_data, indent=2)

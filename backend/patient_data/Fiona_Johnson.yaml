@@ -133,6 +133,8 @@ patient:
       permitted: true
     monitor_urine_output:
       permitted: true
+    respiratory_swabs:
+      permitted: true
     administer_oxygen:
       permitted: true
     iv_fluids:
