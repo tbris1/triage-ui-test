@@ -1,0 +1,21 @@
+:root {
+  --bs-primary: #6f42c1;
+  --bs-primary-rgb: 111, 66, 193;
+}
+
+.btn-primary {
+  --bs-btn-bg: #683cb8;
+  --bs-btn-border-color: #6f42c1;
+  --bs-btn-hover-bg: #1fd1f0;
+  --bs-btn-hover-border-color: #b10000;
+  --bs-btn-active-bg: #4e2b8b;
+  --bs-btn-active-border-color: #4e2b8b;
+}
+
+.bg-primary {
+  background-color: #350a85 !important;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

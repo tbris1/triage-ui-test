@@ -1,0 +1,173 @@
+patient:
+  personal_details:
+    name: Fiona Johnson
+    id: FJ739214
+    age: 70
+    dob: 14/02/1956
+    weight: "68 kg"
+
+  current_nurse:
+    name: "Emily Clarke"
+    phone_number: "62451"
+    registration_number: "9h4821c"
+
+  escalation_status: "Full escalation"
+
+  location:
+    ward: General Medical Ward
+    bed: 12
+
+  initial_nurse_bleep_request: "Hi doctor, sorry to bother you — could you review Fiona Johnson in bed 12 when you get a chance? She’s developed a new cough today. Obs are okay but I'd like a medical review."
+
+  admission:
+    reason: "Admitted 2 days ago with a mechanical fall at home; left tibia/fibula fracture, had open reduction and internal fixation yesterday; awaiting physiotherapy assessment and discharge planning."
+    day: 2
+
+  medications:
+    allergies: ["Penicillin (rash)"]
+    regular_medications:
+      - name: "Amlodipine"
+        dose: "5 mg"
+        route: "oral"
+        frequency: "once daily"
+        last_dose: "this morning"
+      - name: "Atorvastatin"
+        dose: "20 mg"
+        route: "oral"
+        frequency: "once nightly"
+        last_dose: "last night"
+    new_medications: []
+    as_required_PRN:
+      - name: "Paracetamol"
+        dose: "1 g"
+        route: "oral"
+        frequency: "four times daily"
+        last_dose: "14:00"
+        total_dose_last_24_hours: "3 g"
+      - name: "Codeine phosphate"
+        dose: "30 mg"
+        route: "oral"
+        frequency: "four times daily as required"
+        last_dose: "not given today"
+        total_dose_last_24_hours: "0 mg"
+    iv_fluids: []
+
+  background:
+    pmh: ["Hypertension", "Hyperlipidaemia", "Osteoarthritis"]
+    family_history: null
+
+  nursing_observations:
+    obs_history:
+      - time: "08:00"
+        news: 0
+        hr: 78
+        bp: "138/76"
+        rr: 16
+        temp: 36.8
+        spo2: "97% RA"
+        consciousness: "alert"
+      - time: "now"
+        news: 0
+        hr: 84
+        bp: "132/74"
+        rr: 18
+        temp: 37.6
+        spo2: "96% RA"
+        consciousness: "alert"
+    fluid_balance:
+      in_last_24_hours:
+        oral_intake: 1800ml
+        iv_fluids: 0ml
+        total: 1800ml
+      out_last_24_hours:
+        catheter: false
+        urine: "1600 ml"
+        vomit: 0ml
+        diarrhoea: 0ml
+        total: "1600 ml"
+    stool:
+      episodes_last_24_hours: 1
+      characteristics: "normal"
+
+  recent_blood_tests:
+    - test: "FBC"
+      date: "Yesterday"
+      results:
+        hb: 132
+        wcc: 9.8
+        plt: 290
+    - test: "U&E"
+      date: "Yesterday"
+      results:
+        na: 139
+        k: 4.2
+        urea: 5.6
+        creatinine: 78
+        eGFR:
+          result: 75
+          baseline: 78
+    - test: "CRP"
+      date: "Yesterday"
+      results:
+        crp: 24
+
+  symptoms_reported:
+    cough: "cough started today"
+    sputum: "small amounts green sputum production, no blood"
+    breathlessness: "denies breathlessness"
+    fever: "feels slightly warm but no rigors"
+    chest_pain: "no chest pain"
+    calf_pain: "no calf pain, soft and non-tender"
+    coryzal_symptoms: "mild sore throat and nasal congestion"
+    appetite: "slightly reduced"
+    fatigue: "mild fatigue"
+
+  nurse_permitted_tasks:
+    repeat_observations:
+      permitted: true
+    ecg:
+      permitted: true
+    urinalysis:
+      permitted: true
+    send_MSU:
+      permitted: true
+    monitor_urine_output:
+      permitted: true
+    administer_oxygen:
+      permitted: true
+    iv_fluids:
+      permitted: true
+    give_as_required_PRN_meds:
+      permitted: true
+    insert_urinary_catheter:
+      permitted: true
+    bladder_scan:
+      permitted: true
+    update_family:
+      permitted: true
+    check_capillary_blood_glucose:
+      permitted: true
+    check_capillary_blood_ketones:
+      permitted: true
+    blood_tests:
+      permitted: true
+    venous_blood_gas:
+      permitted: true
+    abdominal_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    respiratory_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    cardiovascular_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    neurological_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    arterial_blood_gas:
+      permitted: false
+      reason: "Requires a doctor"
+    give_new_medications:
+      permitted: false
+      reason: "Requires a prescription"

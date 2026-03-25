@@ -1,0 +1,188 @@
+patient:
+  personal_details:
+    name: Millie Edwards
+    id: ME548219
+    age: 22
+    dob: 03/11/2003
+    weight: "58 kg"
+
+  current_nurse:
+    name: "Aisha Patel"
+    phone_number: "61802"
+    registration_number: "7k2193p"
+
+  escalation_status: "Full escalation"
+
+  location:
+    ward: ED Observation Unit
+    bed: 4
+
+  initial_nurse_bleep_request: "Hi doctor, please could you urgently review Millie Edwards in ED Obs bed 4? She’s very drowsy and seems short of breath. She looks really unwell to be honest."
+
+  admission:
+    reason: "Presented with 24 hours of vomiting, abdominal pain, and increasing thirst/polyuria. Known type 1 diabetes; concerns for diabetic ketoacidosis."
+    day: 0
+
+  medications:
+    allergies: ["NKDA"]
+    regular_medications:
+      - name: "Insulin glargine"
+        dose: "18 units"
+        route: "subcutaneous"
+        frequency: "once nightly"
+        last_dose: "last night"
+      - name: "Insulin aspart"
+        dose: "variable"
+        route: "subcutaneous"
+        frequency: "with meals"
+        last_dose: "missed today (vomiting)"
+    new_medications: []
+    as_required_PRN:
+      - name: "Ondansetron"
+        dose: "4 mg"
+        route: "IV"
+        frequency: "three times daily as required"
+        last_dose: "not yet given"
+        total_dose_last_24_hours: "0 mg"
+    iv_fluids:
+      - name: "Normal saline"
+        volume: "1 litre"
+        rate: "500 mls/hr"
+        currently_running: true
+        last_bag_finished: "N/A (running)"
+
+  background:
+    pmh: ["Type 1 diabetes mellitus", "Asthma (mild intermittent)"]
+    family_history: null
+
+  nursing_observations:
+    obs_history:
+      - time: "19:00"
+        news: 2
+        hr: 108
+        bp: "112/68"
+        rr: 24
+        temp: 37.6
+        spo2: "98% RA"
+        consciousness: "drowsy but rousable"
+      - time: "now"
+        news: 7
+        hr: 126
+        bp: "98/60"
+        rr: 32
+        temp: 37.8
+        spo2: "99% RA"
+        consciousness: "more drowsy; answering in short phrases"
+    fluid_balance:
+      in_last_24_hours:
+        oral_intake: 0ml
+        iv_fluids: 500ml
+        total: 500ml
+      out_last_24_hours:
+        catheter: false
+        urine: "Unknown (not measured)"
+        vomit: 600ml
+        diarrhoea: 0ml
+        total: "Unknown"
+    stool:
+      episodes_last_24_hours: 0
+      characteristics: "N/A"
+
+  recent_blood_tests:
+    - test: "VBG"
+      date: "Now"
+      results:
+        ph: 7.12
+        pco2: 3.2
+        hco3: 9
+        lactate: 1.8
+        glucose: 27.4
+    - test: "U&E"
+      date: "Now"
+      results:
+        na: 130
+        k: 5.6
+        urea: 10.2
+        creatinine: 118
+        eGFR:
+          result: 62
+          baseline: 110
+    - test: "FBC"
+      date: "Now"
+      results:
+        hb: 148
+        wcc: 16.2
+        plt: 380
+    - test: "CRP"
+      date: "Now"
+      results:
+        crp: 22
+    - test: "Blood ketones"
+      date: "Now"
+      results:
+        ketones_mmol_l: 6.1
+    - test: "Capillary blood glucose"
+      date: "Now"
+      results:
+        cbg_mmol_l: 28.9
+
+  symptoms_reported:
+    confusion: "drowsy and intermittently confused; worse over last 2 hours"
+    bowels: "no diarrhoea"
+    urine_output: "frequent urination earlier today; not passed urine since arriving in ED Obs (~3 hours)"
+    nausea_vomiting: "persistent vomiting (multiple episodes today)"
+    abdominal_pain: "diffuse abdominal pain, crampy"
+    thirst: "marked thirst"
+    breathlessness: "feels short of breath; rapid deep breathing noted"
+
+  nurse_permitted_tasks:
+    repeat_observations:
+      permitted: true
+    ecg:
+      permitted: true
+    urinalysis:
+      permitted: true
+    send_MSU:
+      permitted: true
+    monitor_urine_output:
+      permitted: true
+    administer_oxygen:
+      permitted: true
+    iv_fluids:
+      permitted: true
+    give_as_required_PRN_meds:
+      permitted: true
+    insert_urinary_catheter:
+      permitted: true
+    bladder_scan:
+      permitted: true
+    update_family:
+      permitted: true
+    check_capillary_blood_glucose:
+      permitted: true
+    check_capillary_blood_ketones:
+      permitted: true
+    blood_tests:
+      permitted: false
+      reason: "Requires a doctor or phlebotomist"
+    venous_blood_gas:
+      permitted: false
+      reason: "Requires a doctor"
+    abdominal_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    respiratory_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    cardiovascular_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    neurological_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    arterial_blood_gas:
+      permitted: false
+      reason: "Requires a doctor"
+    give_new_medications:
+      permitted: false
+      reason: "Requires a prescription"
