@@ -114,7 +114,7 @@ Your task:
 - If the question is ambiguous, return a short clarifying_question instead.
 
 Return ONLY valid JSON with keys: 
-topic, yaml_paths, clarifying_questions
+topic, yaml_paths, clarifying_question
 
 Example output format:
 {{
@@ -157,7 +157,7 @@ You must answer the doctor's follow-up questions using the provided PATIENT_DATA
 You must answer briefly and you may not know certain details.
 Do not offer to carry out additional tasks unless asked directly.
 Only provide answers to the specific question or questions asked.
-If CLARIFYING_QUESTION, consider asking a follow-up question before answering.
+If clarifying_question is provided, consider asking a follow-up question before answering.
 
 
 Keep replies brief, friendly, and realistic.
@@ -190,7 +190,7 @@ def nurse_turn(client, yaml_path: str, doctor_question: str, initial_nurse_bleep
     # Classify the question to get relevant data paths
     classified = router_classify_question(client, doctor_question)
     yaml_paths = classified.get("yaml_paths", [])
-    clarifying_question = classified.get("clarifying_questions", [])
+    clarifying_question = classified.get("clarifying_question", [])
 
     new_nurse_data = get_by_paths(patient_data, yaml_paths)
     new_nurse_data_str = json.dumps(new_nurse_data, indent=2)
