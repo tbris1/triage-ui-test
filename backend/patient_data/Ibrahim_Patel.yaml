@@ -1,0 +1,177 @@
+patient:
+  personal_details:
+    name: Ibrahim Patel
+    id: IP654321
+    dob: 14/02/1944
+    weight: "70 kg"
+
+  current_nurse:
+    name: "Matthew Green"
+    phone_number: "64684"
+    registration_number: "3e7539u"
+
+  escalation_status: "Ward-based escalation (not for level 3 care)"
+
+  location:
+    ward: Care of the Elderly
+    bed: 7
+
+  initial_nurse_bleep_request: "Hi doctor, please could you review Mr Patel, hospital number IP654321? He had an unwitnessed fall about 20 minutes ago. We've helped him back into bed but he'll need a falls review."
+
+  admission:
+    reason: "Admitted 5 days ago with delirium secondary to urinary tract infection and retention."
+    day: 5
+
+  medications:
+    allergies: ["NKDA"]
+    regular_medications:
+      - name: "Donepezil"
+        dose: "10 mg"
+        route: "oral"
+        frequency: "once nightly"
+        last_dose: "last night"
+      - name: "Clopidogrel"
+        dose: "75 mg"
+        route: "oral"
+        frequency: "once daily"
+        last_dose: "this morning"
+      - name: "Amlodipine"
+        dose: "5 mg"
+        route: "oral"
+        frequency: "once daily"
+        last_dose: "this morning"
+    new_medications:
+      - name: "Trimethoprim"
+        dose: "200 mg"
+        route: "oral"
+        frequency: "twice daily"
+        last_dose: "this morning"
+        total_dose_last_24_hours: "400 mg"
+    as_required_PRN:
+      - name: "Paracetamol"
+        dose: "1 g"
+        route: "oral"
+        frequency: "6 hourly as required"
+        last_dose: "3 hours ago"
+        total_dose_last_24_hours: "3 g"
+    iv_fluids: []
+
+  background:
+    pmh: ["Alzheimer's disease", "Hypertension", "Previous TIA"]
+    family_history: null
+
+  nursing_observations:
+    obs_history:
+      - time: "17:30"
+        news: 1
+        hr: 88
+        bp: "142/78"
+        rr: 16
+        temp: 36.8
+        spo2: "96% RA"
+        consciousness: "confused (baseline)"
+      - time: "now"
+        news: 5
+        hr: 96
+        bp: "150/85"
+        rr: 18
+        temp: 36.7
+        spo2: "95% RA"
+        consciousness: "more drowsy, concerned about worsening confusion"
+    fluid_balance:
+      in_last_24_hours:
+        oral_intake: 800ml
+        iv_fluids: 0ml
+        total: 800ml
+      out_last_24_hours:
+        catheter: true
+        urine: 900ml
+        diarrhoea: 0ml
+        vomit: 0ml
+        total: 900ml
+    stool:
+      episodes_last_24_hours: 1
+      characteristics: "formed, normal"
+
+  recent_blood_tests:
+    - test: "FBC"
+      date: "Yesterday"
+      results:
+        hb: 118
+        wcc: 11.2
+        plt: 280
+    - test: "U&E"
+      date: "Yesterday"
+      results:
+        na: 136
+        k: 4.3
+        urea: 7.2
+        creatinine: 105
+        eGFR:
+          result: 62
+          baseline: 65
+    - test: "CRP"
+      date: "Yesterday"
+      results:
+        crp: 45
+
+  symptoms_reported:
+    fall: "Unwitnessed fall approximately 20 minutes ago, found on floor by staff"
+    pain: "Denies pain when asked, but unreliable historian, grimaced a lot when transferred back to bed"
+    neurology: "Leaning to the left when sitting, not moving left arm since fall"
+    head_injury: "Unknown if head strike occurred, no obvious bruising or wounds to head"
+    anticoagulation: "On clopidogrel"
+
+  nurse_permitted_tasks:
+    repeat_observations:
+      permitted: true
+    ecg:
+      permitted: true
+    urinalysis:
+      permitted: true
+    send_MSU:
+      permitted: true
+    monitor_urine_output:
+      permitted: true
+    administer_oxygen:
+      permitted: true
+    iv_fluids:
+      permitted: true
+    give_as_required_PRN_meds:
+      permitted: true
+    insert_urinary_catheter:
+      permitted: true
+    bladder_scan:
+      permitted: true
+    update_family:
+      permitted: true
+    check_capillary_blood_glucose:
+      permitted: true
+    check_capillary_blood_ketones:
+      permitted: true
+    hold_medications:
+      permitted: true
+    call_phlebotomy:
+      permitted: true
+    blood_tests:
+      permitted: true
+    venous_blood_gas:
+      permitted: true
+    abdominal_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    respiratory_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    cardiovascular_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    neurological_examination:
+      permitted: false
+      reason: "Requires a doctor"
+    arterial_blood_gas:
+      permitted: false
+      reason: "Requires a doctor"
+    give_new_medications:
+      permitted: false
+      reason: "Requires a prescription"

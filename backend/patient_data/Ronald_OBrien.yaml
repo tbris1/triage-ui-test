@@ -1,0 +1,182 @@
+patient:
+ personal_details:
+   name: Ronald O’Brien
+   id: RC987654
+   age: 79
+   dob: 13/07/1946
+   weight: "78 kg"
+ current_nurse:
+   name: "Sam Turley"
+   phone_number: "62514"
+   registration_number: "4e7499u"
+ escalation_status: "Full escalation"
+ location:
+   ward: AMU
+   bed: 13
+ initial_nurse_bleep_request: "Hi doctor, please could you review one of my patients, Ronald O'Brien? His blood pressure is really quite low on the last obs round."
+ admission:
+   reason: "Admitted yesterday with fever and cough, currently being treated for respiratory tract infection."
+   day: 2
+ medications:
+   allergies: ["NKDA"]
+   regular_medications:
+     - name: "Ramipril"
+       dose: "10 mg"
+       route: "oral"
+       frequency: "once daily"
+       last_dose: "this morning"
+     - name: "Atorvastatin"
+       dose: "80mg"
+       route: "oral"
+       frequency: "once nightly"
+       last_dose: "this evening"
+     - name: "Bisoprolol"
+       dose: "2.5 mg"
+       route: "oral"
+       frequency: "twice daily"
+       last_dose: "this evening"
+       total_dose_last_24_hours: "5 mg"
+   new_medications:
+     - name: "Co-amoxiclav"
+       dose: "1.2 g"
+       route: "IV"
+       frequency: "three times daily"
+       last_dose: "4 hours ago"
+   as_required_PRN:
+     - name: "Paracetamol"
+       dose: "500 - 1000 mg"
+       route: "oral"
+       frequency: "4 hourly as required"
+       last_dose: "6 hours ago"
+       total_dose_last_24_hours: "1000 mg"
+   iv_fluids:
+     - name: "Normal saline"
+       volume: "1 litre"
+       rate: "125 mls/hr"
+       currently_running: false
+       last_bag_finished: "6 hours ago"
+
+
+ background:
+   pmh: ["HTN", "Alzheimers dementia", “severe aortic stenosis”]
+   family_history: null
+
+
+ nursing_observations:
+   obs_history:
+     - time: "18:00"
+       news: 5
+       hr: 82
+       bp: "82/58"
+       rr: 20
+       temp: 36.9
+       spo2: "98% on 4L oxygen"
+       consciousness: "alert"
+     - time: "now"
+       news: 4
+       hr: 105
+       bp: "128/74"
+       rr: 15
+       temp: 37.4
+       spo2: "97% RA"
+       consciousness: "new confusion"
+   fluid_balance:
+     in_last_24_hours:
+       oral_intake: 200ml
+       iv_fluids: 2000ml
+       total: 2200ml
+     out_last_24_hours:
+       catheter: true
+       urine: 1550ml
+       diarrhoea: 0ml
+       vomit: 0ml
+       total: 1550ml
+   stool:
+     episodes_last_24_hours: 1
+     characteristics: "type 4, no blood"
+
+
+ recent_blood_tests:
+   - test: "FBC"
+     date: "Yesterday"
+     results:
+       hb: 120
+       wcc: 14.5
+       plt: 320
+   - test: "U&E"
+     date: "Yesterday"
+     results:
+       na: 134
+       k: 4.9
+       urea: 7.7
+       creatinine: 115
+       eGFR:
+         result: 48
+         baseline: 60
+   - test: "CRP"
+     date: "Yesterday"
+     results:
+       crp: 88
+
+
+ symptoms_reported:
+   confusion: "background of dementia, at at baseline"
+   bowels: "bowels last opened yesterday, type 4 stool"
+   urine_output: "approximately 60ml/hour for last 6 hours"
+
+
+ nurse_permitted_tasks:
+   repeat_observations:
+     permitted: true
+   ecg:
+     permitted: true
+   urinalysis:
+     permitted: true
+   send_MSU:
+     permitted: true
+   monitor_urine_output:
+     permitted: true
+   administer_oxygen:
+     permitted: true
+   iv_fluids:
+     permitted: true
+   give_as_required_PRN_meds:
+     permitted: true
+   insert_urinary_catheter:
+     permitted: true
+   bladder_scan:
+     permitted: true
+   update_family:
+     permitted: true
+   check_capillary_blood_glucose:
+     permitted: true
+   check_capillary_blood_ketones:
+     permitted: true
+   hold_medications:
+     permitted: true
+   call_phlebotomy:
+     permitted: true
+   blood_tests:
+     permitted: false
+     reason: "Requires a doctor or phlebotomist"
+   venous_blood_gas:
+     permitted: false
+     reason: "Requires a doctor"
+   abdominal_examination:
+     permitted: false
+     reason: "Requires a doctor"
+   respiratory_examination:
+     permitted: false
+     reason: "Requires a doctor"
+   cardiovascular_examination:
+     permitted: false
+     reason: "Requires a doctor"
+   neurological_examination:
+     permitted: false
+     reason: "Requires a doctor"
+   arterial_blood_gas:
+     permitted: false
+     reason: "Requires a doctor"
+   give_new_medications:
+     permitted: false
+     reason: "Requires a prescription"
