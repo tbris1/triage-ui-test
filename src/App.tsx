@@ -167,7 +167,7 @@ function App() {
       </nav>
 
       {/* Main Content */}
-      <div className={`flex-grow-1 ${currentView === 'training' ? 'overflow-hidden' : 'overflow-auto'}`}>
+      <div className={`flex-grow-1 ${currentView === 'training' ? 'overflow-auto' : 'overflow-auto'}`}>
         {currentView === 'scenario-select' && (
           <ScenarioSelector
             scenarios={scenarios}
