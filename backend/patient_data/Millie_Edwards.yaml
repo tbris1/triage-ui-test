@@ -160,8 +160,10 @@ patient:
       permitted: true
     check_capillary_blood_glucose:
       permitted: true
+      result: "28.9 mmol/L"
     check_capillary_blood_ketones:
       permitted: true
+      result: "6.1 mmol/L"
     blood_tests:
       permitted: false
       reason: "Requires a doctor or phlebotomist"
