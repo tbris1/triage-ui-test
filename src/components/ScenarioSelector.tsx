@@ -8,10 +8,10 @@ interface ScenarioSelectorProps {
 export function ScenarioSelector({ scenarios, onSelectScenario }: ScenarioSelectorProps) {
   return (
     <div className="container py-5">
-      <h1 className="text-center mb-4">On-Call Medical Triage Training</h1>
+      <h1 className="text-center mb-4">On-Call Triage and Prioritisation Training</h1>
       <p className="text-center text-muted mb-5">
-        <h4>Select a scenario to practice your on-call triage. </h4>
-        A work in progress.
+        <h4>The time is 23:00. You are the on-call FY1. Several nurses are requesting your assistance... </h4>
+        <i>A work in progress.</i>
       </p>
 
       <div className="row g-4">

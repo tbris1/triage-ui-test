@@ -142,7 +142,7 @@ function App() {
       {/* Header */}
       <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
-          <span className="navbar-brand mb-0 h1">Medical Triage Training</span>
+          <span className="navbar-brand mb-0 h1">On-Call Triage and Prioritisation Training</span>
           <div>
             {currentView === 'training' && (
               <button

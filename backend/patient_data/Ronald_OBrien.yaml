@@ -64,22 +64,22 @@ patient:
 
  nursing_observations:
    obs_history:
-     - time: "18:00"
-       news: 5
-       hr: 82
+     - time: "now"
+       news: 6
+       hr: 96
        bp: "82/58"
        rr: 20
        temp: 36.9
        spo2: "98% on 4L oxygen"
        consciousness: "alert"
-     - time: "now"
-       news: 4
-       hr: 105
+     - time: "18:00"
+       news: 1
+       hr: 94
        bp: "128/74"
        rr: 15
        temp: 37.4
-       spo2: "97% RA"
-       consciousness: "new confusion"
+       spo2: "96% RA"
+       consciousness: "alert"
    fluid_balance:
      in_last_24_hours:
        oral_intake: 200ml
