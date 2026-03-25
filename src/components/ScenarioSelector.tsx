@@ -10,7 +10,8 @@ export function ScenarioSelector({ scenarios, onSelectScenario }: ScenarioSelect
     <div className="container py-5">
       <h1 className="text-center mb-4">On-Call Triage and Prioritisation Training</h1>
       <p className="text-center text-muted mb-5">
-        <h4>The time is 23:00. You are the on-call FY1. Several nurses are requesting your assistance... </h4>
+        <h4>The time is 23:00. You are the on-call FY1.</h4>
+        <h4>Several nurses are requesting your assistance... </h4>
         <i>A work in progress.</i>
       </p>
 
