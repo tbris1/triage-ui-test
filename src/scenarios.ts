@@ -5,8 +5,8 @@ export const scenarios: Scenario[] = [
     id: 'urine-output',
     patient_name: 'Richard Crowther',
     yaml_path: 'Richard_Crowther',
-    title: 'Reduced Urine Output',
-    description: 'A nurse calls about a patient with reduced urine output',
+    title: 'Richard Crowther',
+    description: 'A nurse is calling about a patient with reduced urine output and confusion',
     initialPrompt: `Hi doctor, please could you review one of my patients, Richard Crowther? He has become more confused this evening and his urine output is very low.`,
     correctTriage: 'urgent',
     learningPoints: [
@@ -20,8 +20,8 @@ export const scenarios: Scenario[] = [
     id: 'dka',
     patient_name: 'Millie Edwards',
     yaml_path: 'Millie_Edwards',
-    title: 'Drowsy',
-    description: 'A nurse calls about a drowsy patient she is worried about',
+    title: 'Millie Edwards',
+    description: 'A nurse is calling about a drowsy patient she is really worried about',
     initialPrompt: `Hi doctor, please could you urgently review Millie Edwards in ED Obs bed 4? She’s very drowsy and seems short of breath. She looks really unwell to be honest.`,
     correctTriage: 'emergency',
     learningPoints: [
@@ -32,8 +32,8 @@ export const scenarios: Scenario[] = [
     id: 'urti',
     patient_name: 'Fiona Johnson',
     yaml_path: 'Fiona_Johnson',
-    title: 'Cough',
-    description: 'A nurse calls about a patient with a new cough',
+    title: 'Fiona Johnson',
+    description: 'A nurse is requesting a review of a patient with new cough',
     initialPrompt: `Hi doctor, sorry to bother you — could you review Fiona Johnson in bed 12 when you get a chance? She’s developed a new cough today. Obs are okay but I'd like a medical review.`,
     correctTriage: 'non-urgent',
     learningPoints: [
@@ -48,8 +48,8 @@ export const scenarios: Scenario[] = [
     id: 'hypotension',
     patient_name: 'Ronald O\'Brien',
     yaml_path: 'Ronald_OBrien',
-    title: 'Low BP',
-    description: 'A nurse calls about a patient with low BP',
+    title: 'Ronald O\'Brien',
+    description: 'A nurse is calling about a patient with a low BP',
     initialPrompt: "Hi doctor, please could you review one of my patients, Ronald O'Brien? His blood pressure is really quite low on the last obs round.",
     correctTriage: 'urgent',
     learningPoints: [
@@ -58,10 +58,10 @@ export const scenarios: Scenario[] = [
   },
   {
     id: 'fall',
-    title: 'Fall',
     patient_name: 'Ibrahim Patel',
     yaml_path: 'Ibrahim_Patel',
-    description: 'A nurse calls about an elderly patient who fell',
+    title: 'Ibrahim Patel',
+    description: 'A nurse is requesting a falls review',
     initialPrompt:  'Hi doctor, please could you review Mr Patel, hospital number IP654321? He had an unwitnessed fall about 20 minutes ago. We\'ve helped him back into bed but he\'ll need a falls review.',
     correctTriage: 'urgent',
     learningPoints: [

@@ -117,7 +117,7 @@ patient:
     breathlessness: "denies breathlessness"
     fever: "feels slightly warm but no rigors"
     chest_pain: "no chest pain"
-    calf_pain: "no calf pain, soft and non-tender"
+    calf_pain: "no right calf pain, soft and non-tender; no swelling; left lower leg in a backslab cast"
     coryzal_symptoms: "mild sore throat and nasal congestion"
     appetite: "slightly reduced"
     fatigue: "mild fatigue"
