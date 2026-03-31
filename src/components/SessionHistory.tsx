@@ -6,6 +6,28 @@ interface SessionHistoryProps {
   onClose: () => void;
 }
 
+function downloadAllSessions(sessions: Session[]) {
+  const payload = sessions.map(session => ({
+    exported_at: new Date().toISOString(),
+    scenario: session.scenarioTitle,
+    started: new Date(session.startTime).toISOString(),
+    completed: session.endTime ? new Date(session.endTime).toISOString() : null,
+    triage_decision: session.triageDecision ?? null,
+    is_correct: session.isCorrect ?? null,
+    conversation: session.messages
+      .filter(m => m.role !== 'system')
+      .map(m => ({ role: m.role, content: m.content, timestamp: new Date(m.timestamp).toISOString() })),
+  }));
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0, 10);
+  a.href = url;
+  a.download = `triage-sessions-all-${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export function SessionHistory({ sessions, onViewSession, onClose }: SessionHistoryProps) {
   return (
     <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
@@ -66,7 +88,12 @@ export function SessionHistory({ sessions, onViewSession, onClose }: SessionHist
           </div>
 
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" onClick={onClose}>
+            {sessions.length > 0 && (
+              <button type="button" className="btn btn-secondary" onClick={() => downloadAllSessions(sessions)}>
+                Download All
+              </button>
+            )}
+            <button type="button" className="btn btn-primary" onClick={onClose}>
               Close
             </button>
           </div>
